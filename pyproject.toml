@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "min-repr-ex"
+version = "0.1.0"
+description = ""
+authors = []
+packages = [{include = "min_repr_ex"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+pytest-cov = "^5.0.0"
+ruff = "^0.5.6"
+pytest-ruff = "^0.4.1"
+
+
+[tool.pytest.ini_options]
+addopts = "-rfxX --verbose --cov-report html --cov-report term-missing --cov=src"
+#addopts = "-rfxX --ruff --verbose --cov-report html --cov-report term-missing --cov=src"
+testpaths = ["tests", "src"]
+markers = ["mypy"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
